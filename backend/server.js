@@ -14,7 +14,7 @@ const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
     origin: [
-      "http://localhost:3000",
+      "*",
       "https://chat-app-frontend-git-main-om-prakash-vishwakarmas-projects.vercel.app/"  // ← your vercel URL
     ],
     methods: ["GET", "POST"]
@@ -24,7 +24,7 @@ const io = socketIo(server, {
 // Middleware
 app.use(cors({
   origin: [
-    "http://localhost:3000",
+    "*",
     "https://chat-app-frontend-git-main-om-prakash-vishwakarmas-projects.vercel.app/"  // ← your vercel URL
   ],
   methods: ["GET", "POST", "PUT", "DELETE"],
