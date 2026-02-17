@@ -11,25 +11,32 @@ const Message = require('./models/Message');
 
 const app = express();
 const server = http.createServer(app);
+// ✅ New
 const io = socketIo(server, {
   cors: {
     origin: [
-      "*",
-      "https://chat-app-frontend-git-main-om-prakash-vishwakarmas-projects.vercel.app"  // ← your vercel URL
+      'http://localhost:3000',
+      'https://chat-app-frontend-kohl-one.vercel.app',  // ← your Vercel URL
+      /\.vercel\.app$/
     ],
-    methods: ["GET", "POST"]
+    methods: ["GET", "POST"],
+    credentials: true
   }
 });
 
 // Middleware
+// ✅ New - add your Vercel URL
 app.use(cors({
   origin: [
-    "*",
-    "https://chat-app-frontend-git-main-om-prakash-vishwakarmas-projects.vercel.app"  // ← your vercel URL
+    'http://localhost:3000',
+    'https://chat-app-frontend-kohl-one.vercel.app',  // ← your Vercel URL from screenshot
+    /\.vercel\.app$/  // allows all vercel preview URLs too
   ],
-  methods: ["GET", "POST", "PUT", "DELETE"],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
 }));
+app.options('*', cors());
 app.use(express.json());
 
 // MongoDB Connection
