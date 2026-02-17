@@ -15,7 +15,7 @@ const io = socketIo(server, {
   cors: {
     origin: [
       "*",
-      "https://chat-app-frontend-git-main-om-prakash-vishwakarmas-projects.vercel.app/"  // ← your vercel URL
+      "https://chat-app-frontend-git-main-om-prakash-vishwakarmas-projects.vercel.app"  // ← your vercel URL
     ],
     methods: ["GET", "POST"]
   }
@@ -25,7 +25,7 @@ const io = socketIo(server, {
 app.use(cors({
   origin: [
     "*",
-    "https://chat-app-frontend-git-main-om-prakash-vishwakarmas-projects.vercel.app/"  // ← your vercel URL
+    "https://chat-app-frontend-git-main-om-prakash-vishwakarmas-projects.vercel.app"  // ← your vercel URL
   ],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
