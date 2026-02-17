@@ -1,7 +1,7 @@
 class ApiConstants {
   // Change this to your backend URL
-  static const String baseUrl = 'http://localhost:3000'; // For Android Emulator use: http://10.0.2.2:3000
-  static const String socketUrl = 'http://localhost:3000'; // For Android Emulator use: http://10.0.2.2:3000
+  static const String baseUrl = 'chat-app-production-029d.up.railway.app'; // For Android Emulator use: http://10.0.2.2:3000
+  static const String socketUrl = 'chat-app-production-029d.up.railway.app'; // For Android Emulator use: http://10.0.2.2:3000
   
   // API Endpoints
   static const String register = '/api/auth/register';
